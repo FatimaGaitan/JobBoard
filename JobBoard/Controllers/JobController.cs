@@ -29,9 +29,14 @@ namespace JobBoard.Controllers
             return PartialView(model);
         }
 
-        public ActionResult _AddJob()
+        public ActionResult _AddEditJob(int? Job_ID)
         {
-            return PartialView();
+            Job model = new Job();
+            if (Job_ID != 0)
+            {
+               model = db.Job.FirstOrDefault(x => x.Job_ID == Job_ID);
+            }
+            return PartialView(model);
         }
 
         public ActionResult SaveJob(JobVM form)
@@ -49,7 +54,38 @@ namespace JobBoard.Controllers
             }
             catch (Exception)
             {
-                return Json(new { e = 0, msj = "Job not saved, something went wrong." }, JsonRequestBehavior.AllowGet);
+                return Json(new { e = 0, msj = "Job not saved, something went wrong, please, try again." }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult SaveEditJob(JobVM form)
+        {
+            try
+            {
+                Job model = db.Job.FirstOrDefault(x => x.Job_ID == form.Job_ID);
+                model.Job_Title = form.Job_Title;
+                model.Description = form.Description;
+                model.ExpiresAt = form.ExpiresAt;
+                db.SaveChanges();
+                return Json(new { e = 1, msj = "Job modified sucessfully" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+                return Json(new { e = 0, msj = "Job not modified, something went wrong, please, try again." }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult DeleteJob(int Job_ID)
+        {
+            try
+            {
+                Job model = db.Job.FirstOrDefault(x => x.Job_ID == Job_ID);
+                db.Job.Remove(model);
+                db.SaveChanges();
+                return Json(new { e = 1, msj = "Job modified sucessfully" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                return Json(new { e = 0, msj = "Job not modified, something went wrong, please, try again." }, JsonRequestBehavior.AllowGet);
             }
         }
     }
