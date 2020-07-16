@@ -11,7 +11,8 @@
 <body>
     <nav class="navbar fixed-top navbar-light bg-purple">
         <a class="navbar-brand text-white" href="#"><i class="fas fa-briefcase text-white"></i> Job Board</a>
-        <a class="fa-pull-right text-white">Welcome <i class="fas fa-smile text-white pl-1"></i></a></nav>
+        <a class="fa-pull-right text-white">Welcome <i class="fas fa-smile text-white pl-1"></i></a>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -23,6 +24,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/popper")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/JS")
     @RenderSection("scripts", required: false)
 </body>
 </html>

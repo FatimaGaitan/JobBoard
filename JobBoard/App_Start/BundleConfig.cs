@@ -23,14 +23,21 @@ namespace JobBoard
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/DataTables/datatables.min.js",
                       "~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/JS").Include(
+                "~/Scripts/DataTables/datatables.min.js",
+                "~/Scripts/Moment.js",
+                "~/Scripts/bootstrap-datepicker.min.js",
+                "~/Scripts/bootstrap-datetimepicker.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Custom/Job.css",
                       "~/Scripts/DataTables/datatables.min.css",
                       "~/Content/fontawesome/css/all.min.css",
+                      "~/Content/bootstrap-datepicker.css",
+                      "~/Content/bootstrap-datetimepicker.css",
                       "~/Content/site.css"));
         }
     }

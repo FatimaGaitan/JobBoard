@@ -1,4 +1,5 @@
 ﻿using JobBoard.Models;
+using JobBoard.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,11 +29,28 @@ namespace JobBoard.Controllers
             return PartialView(model);
         }
 
-        public ActionResult Contact()
+        public ActionResult _AddJob()
         {
-            ViewBag.Message = "Your contact page.";
+            return PartialView();
+        }
 
-            return View();
+        public ActionResult SaveJob(JobVM form)
+        {
+            try
+            {
+                Job model = new Job();
+                model.Job_Title = form.Job_Title;
+                model.Description = form.Description;
+                model.CreatedAt = DateTime.Now;
+                model.ExpiresAt = form.ExpiresAt;
+                db.Job.Add(model);
+                db.SaveChanges();
+                return Json(new { e = 1, msj = "Job saved sucessfully" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+                return Json(new { e = 0, msj = "Job not saved, something went wrong." }, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

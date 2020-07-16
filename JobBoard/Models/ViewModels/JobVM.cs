@@ -1,26 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace JobBoard.Models
+namespace JobBoard.Models.ViewModels
 {
-    [Table("Job")]
-    public class Job
+    public class JobVM
     {
-        [Key]
         public int Job_ID { get; set; }
-        [Required]
-        [StringLength(200)]
         public string Job_Title { get; set; }
-        [Required]
-        [StringLength(550)]
         public string Description { get; set; }
-        [Required]
         public DateTime CreatedAt { get; set; }
-        [Required]
         public DateTime ExpiresAt { get; set; }
     }
 }

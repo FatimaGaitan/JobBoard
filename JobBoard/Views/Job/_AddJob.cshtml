@@ -1,0 +1,32 @@
+﻿<div class="modal fade" id="modal-add-job" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Job</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" id="frm-add-job" enctype="multipart/form-data" autocomplete="off">
+                    <div class="form-group">
+                        <label for="Job_Title">Title:</label>
+                        <input type="text" class="form-control col-md-12" id="Job_Title" name="Job_Title" maxlength="200" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">Description:</label>
+                        <textarea type="text" class="form-control col-md-12" id="Description" name="Description" maxlength="500" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ExpiresAt">Expires At:</label>
+                        <input type="text" class="form-control col-md-12" id="ExpiresAt" name="ExpiresAt" placeholder="Pick a expiry date" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

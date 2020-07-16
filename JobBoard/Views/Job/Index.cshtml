@@ -2,10 +2,18 @@
     ViewBag.Title = "Home";
 }
 
+<!--URL-->
+<input type="hidden" id="url-get-jobs" value="@Url.Action("_GetJobs", "Job")" />
+<input type="hidden" id="url-modal-add" value="@Url.Action("_AddJob", "Job")" />
+<input type="hidden" id="url-save-add" value="@Url.Action("Save", "Job")" />
+<input type="hidden" id="url-modal-edit" value="@Url.Action("_Edit", "Job")" />
+<input type="hidden" id="url-save-edit" value="@Url.Action("SaveEdit", "Job")" />
+<input type="hidden" id="url-delete" value="@Url.Action("Delete", "Job")" />
+<!---->
 
 <div class="card mx-auto custom-card col-md-12">
     <div class="row">
-        <button class="btn btn-purple">
+        <button class="btn btn-purple" id="btn-add-job">
             <i class="fa fa-plus-circle pr-2"></i> Add Job
         </button>
     </div>
@@ -25,12 +33,4 @@
 
 @section scripts{
     <script src="@Url.Content("~/Scripts/Custom/Job.js")"></script>
-    <script>
-        var url-get-jobs = @Url.Action("_GetJobs", "Job")
-        var url-modal-add = @Url.Action("_AddJob", "Job")
-        var url-save-add = @Url.Action("Save", "Job")
-        var url-modal-edit = @Url.Action("_Edit", "Job")
-        var url-save-edit = @Url.Action("SaveEdit", "Job")
-        var url-delete = @Url.Action("Delete","Job")
-    </script>
 }
