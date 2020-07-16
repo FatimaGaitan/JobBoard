@@ -1,0 +1,25 @@
+﻿
+.custom-card {
+    padding: 30px;
+    margin: 30px 0px;
+    border-radius: 5px;
+    box-shadow: 8px 8px 22px #ddd;
+    border-color: white;
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #a728a3;
+    border-color: #9328a7;
+}
+
+    .btn-purple:hover, .btn-purple:active {
+        color: #fff;
+        background-color: #9c2698;
+        border-color: #9c2698;
+    }
+
+.custom-table {
+    background-color: #cddff3;
+    color: black;
+}

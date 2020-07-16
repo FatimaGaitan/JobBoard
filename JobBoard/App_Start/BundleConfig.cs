@@ -28,6 +28,7 @@ namespace JobBoard
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/Custom/Job.css",
                       "~/Scripts/DataTables/datatables.min.css",
                       "~/Content/fontawesome/css/all.min.css",
                       "~/Content/site.css"));

@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.bg-purple {
+    background-color: #74005b;
+}

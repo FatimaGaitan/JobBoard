@@ -1,0 +1,32 @@
+﻿@model IEnumerable<JobBoard.Models.Job>
+<table class="table table table-hover table-sm table-bordered mt-4" id="job-table">
+    <thead class="custom-table">
+        <tr>
+            <th class="text-center">Job ID</th>
+            <th>Job Title</th>
+            <th>Description</th>
+            <th>Created Date</th>
+            <th>Expired Date</th>
+            <th style="text-align:center;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.Job_ID</td>
+            <td>@item.Job_Title</td>
+            <td>@item.Description</td>
+            <td>@item.CreatedAt</td>
+            <td>@item.ExpiresAt</td>
+            <td><button class="btn btn-sm btn-primary" id="btn-edit-job" data-id="@item.Job_ID">
+                <i class="fa fa-edit"></i>
+                </button>
+            <button class="btn btn-danger" id="btn-delete-job" data-id="@item.Job_ID">
+                <i class="fa fa-remove"></i>
+            </button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

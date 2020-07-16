@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JobBoard.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,16 +9,23 @@ namespace JobBoard.Controllers
 {
     public class JobController : Controller
     {
+        private JobDbContext db;
+
+        public JobController()
+        {
+            db = new JobDbContext();
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult _GetJobs()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            List<Job> model = new List<Job>();
+            model = db.Job.Select(x => x).ToList();
+            return PartialView(model);
         }
 
         public ActionResult Contact()
