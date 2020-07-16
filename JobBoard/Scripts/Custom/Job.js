@@ -45,12 +45,13 @@ $(document).on('submit', '#frm-add-job', function (e) {
         data: Form,
         success: function (data) {
             if (data.e == 1) {
+                swal('Success', data.msj, 'success');
                 $('#modal-addedit-job').modal('hide');
                 GetJobs();
             }
-        },
-        error: function () {
-
+            else {
+                swal('Error', data.msj, 'error');
+            }
         }
     });
 });
@@ -90,12 +91,13 @@ $(document).on('submit', '#frm-edit-job', function (e) {
         data: Form,
         success: function (data) {
             if (data.e == 1) {
+                swal('Success', data.msj, 'success');
                 $('#modal-addedit-job').modal('hide');
                 GetJobs();
             }
-        },
-        error: function () {
-
+            else {
+                swal('Error', data.msj, 'Error');
+            }
         }
     });
 });
@@ -103,20 +105,33 @@ $(document).on('submit', '#frm-edit-job', function (e) {
 $(document).on('click', '#btn-delete-job', function (e) {
     e.preventDefault();
     var Job_ID = $(this).data('id');
-    $.ajax({
-        url: $('#url-delete-job').val(),
-        cache: false,
-        type: 'POST',
-        data: {
-            Job_ID: Job_ID
+    swal({
+        title: "Delete Job",
+        text: "Are you sure you want to delete this job?",
+        icon: "warning",
+        buttons: {
+            cancel: "No",
+            confirm: "Yes",
         },
-        success: function (data) {
-            if (data.e == 1) {
-                GetJobs();
-            }
-        },
-        error: function () {
+        dangerMode: true
+    }).then(function (result) {
+        if (result) {
+            $.ajax({
+                url: $('#url-delete-job').val(),
+                cache: false,
+                type: 'POST',
+                data: {
+                    Job_ID: Job_ID
+                },
+                success: function (data) {
+                    if (data.e == 1) {
+                        GetJobs();
+                    }
+                },
+                error: function () {
 
+                }
+            });
         }
-    });
+        });
 });

@@ -28,6 +28,7 @@ namespace JobBoard
             bundles.Add(new ScriptBundle("~/bundles/JS").Include(
                 "~/Scripts/DataTables/datatables.min.js",
                 "~/Scripts/Moment.js",
+                "~/Scripts/sweetalert.min.js",
                 "~/Scripts/bootstrap-datepicker.min.js",
                 "~/Scripts/bootstrap-datetimepicker.js"));
 
@@ -38,6 +39,7 @@ namespace JobBoard
                       "~/Content/fontawesome/css/all.min.css",
                       "~/Content/bootstrap-datepicker.css",
                       "~/Content/bootstrap-datetimepicker.css",
+                      "~/Content/Sweetalert.css",
                       "~/Content/site.css"));
         }
     }
