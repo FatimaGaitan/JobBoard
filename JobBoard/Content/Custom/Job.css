@@ -9,17 +9,38 @@
 
 .btn-purple {
     color: #fff;
-    background-color: #a728a3;
-    border-color: #9328a7;
+    background-color: #9d2b5a;
+    border-color: #9d2b5a;
 }
 
     .btn-purple:hover, .btn-purple:active {
         color: #fff;
-        background-color: #9c2698;
-        border-color: #9c2698;
+        background-color: #a82f60;
+        border-color: #a82f60;
+    }
+.btn-primary {
+    color: white;
+    background-color: #20aadf !important;
+    border-color: #20aadf !important;
+}
+    .btn-primary:hover, .btn-primary:active {
+        color: white;
+        background-color: #34b0e0 !important;
+        border-color: #34b0e0 !important;
+    }
+
+.btn-danger {
+    color: #fff;
+    background-color: #be3643 !important;
+    border-color: #be3643 !important;
+}
+    .btn-danger:hover, .btn-danger:active {
+        color: white;
+        background-color: #c1414d !important;
+        border-color: #c1414d !important;
     }
 
 .custom-table {
-    background-color: #cddff3;
+    background-color: #f3f3f3;
     color: black;
 }
